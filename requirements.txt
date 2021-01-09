@@ -1,0 +1,3 @@
+numpy
+librosa
+python_speech_features
