@@ -32,7 +32,7 @@ def arfit_frames(data, pmin=1, pmax=40, selector='sbc'):
 
 
 def arfit(data, pmin=1, pmax=40, selector='sbc'):
-    '''perform auto-regeressive model selection
+    '''perform auto-regeressive order selection/estimation
     @data: input array in shape [frame_len, ]
     @pmin: minimal AR order to select, default 1
     @pmax: maximum AR order to select, default 40
@@ -114,7 +114,6 @@ def arqr(data, p, mcor=0):
     delta = (q**2 + q + 1) * np.finfo(float).eps  # Higham's choice for a Cholesky factorization
     scale = np.sqrt(delta) * np.sqrt(np.sum(K**2, axis=0))
     R = np.triu(numpy.linalg.qr(np.concatenate([K, np.diag(scale)], axis=0))[1])
-    # print(numpy.linalg.qr(np.concatenate([K, np.diag(scale)], axis=0))[1])
     return R, scale
 
 
