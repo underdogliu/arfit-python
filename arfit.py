@@ -10,8 +10,6 @@
 
 import numpy as np
 import numpy.linalg
-import os
-import sys
 
 def arfit_frames(data, pmin=1, pmax=40, selector='sbc'):
     '''acquire in put data matrix and call arfit for each frame
